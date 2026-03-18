@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuxWash — Premium Laundry Services</title>
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Effects -->
+  <div class="site-bg">
+    <span class="bg-orb orb-1"></span>
+    <span class="bg-orb orb-2"></span>
+    <span class="bg-orb orb-3"></span>
+    <span class="grid-overlay"></span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top luxury-navbar" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="#home">
+        <span class="brand-mark">
+          <i class="bi bi-stars"></i>
+        </span>
+        <span class="brand-text">LuxWash</span>
+      </a>
+
+      <button
+        class="navbar-toggler custom-toggler border-0 shadow-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto mb-3 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#process">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#booking">Book Now</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 nav-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="toggle-track">
+              <span class="toggle-thumb">
+                <i class="bi bi-moon-stars-fill icon-dark"></i>
+                <i class="bi bi-sun-fill icon-light"></i>
+              </span>
+            </span>
+          </button>
+          <a href="#booking" class="btn btn-lux btn-lux-primary">Book Pickup</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero-section section-pad" id="home">
+    <div class="container">
+      <div class="row align-items-center g-5 min-vh-100 hero-row">
+        <div class="col-lg-6">
+          <div class="hero-content reveal fade-up">
+            <span class="eyebrow-pill">Luxury Laundry Experience</span>
+            <h1 class="hero-title">
+              Premium care for every fabric,
+              <span class="gradient-text">delivered with precision.</span>
+            </h1>
+            <p class="hero-text">
+              LuxWash transforms laundry into a high-end service experience with
+              smart pickup scheduling, premium garment care, fast turnaround,
+              and immaculate presentation.
+            </p>
+
+            <div class="hero-actions d-flex flex-wrap gap-3">
+              <a href="#booking" class="btn btn-lux btn-lux-primary btn-lg">Book Pickup</a>
+              <a href="#services" class="btn btn-lux btn-lux-outline btn-lg">Explore Services</a>
+            </div>
+
+            <div class="hero-stats row g-3 mt-4">
+              <div class="col-sm-4">
+                <div class="glass-stat floating-soft">
+                  <h4>24h</h4>
+                  <p>Express turnaround</p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="glass-stat floating-soft delay-1">
+                  <h4>4.9★</h4>
+                  <p>Client satisfaction</p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="glass-stat floating-soft delay-2">
+                  <h4>100%</h4>
+                  <p>Fabric-focused care</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-visual reveal fade-left">
+            <div class="hero-device-card floating-slow">
+              <div class="device-topbar">
+                <span></span><span></span><span></span>
+              </div>
+
+              <div class="device-screen">
+                <div class="screen-card screen-card-main">
+                  <div class="screen-icon"><i class="bi bi-bag-check-fill"></i></div>
+                  <div>
+                    <h5>Pickup Confirmed</h5>
+                    <p>Luxury garment care scheduled for today.</p>
+                  </div>
+                </div>
+
+                <div class="screen-grid">
+                  <div class="screen-mini-card tilt-mini">
+                    <i class="bi bi-droplet-half"></i>
+                    <span>Wash & Fold</span>
+                  </div>
+                  <div class="screen-mini-card tilt-mini">
+                    <i class="bi bi-shield-check"></i>
+                    <span>Fabric Safe</span>
+                  </div>
+                  <div class="screen-mini-card tilt-mini">
+                    <i class="bi bi-truck"></i>
+                    <span>Fast Delivery</span>
+                  </div>
+                  <div class="screen-mini-card tilt-mini">
+                    <i class="bi bi-lightning-charge"></i>
+                    <span>Express Care</span>
+                  </div>
+                </div>
+
+                <div class="screen-progress">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span>Order Progress</span>
+                    <strong>82%</strong>
+                  </div>
+                  <div class="progress luxury-progress">
+                    <div class="progress-bar" style="width: 82%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-1 floating-soft">
+              <i class="bi bi-stars"></i> Premium Finish
+            </div>
+            <div class="floating-badge badge-2 floating-soft delay-2">
+              <i class="bi bi-box-seam"></i> Pickup & Delivery
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Services -->
+  <section class="services-section section-pad" id="services">
+    <div class="container">
+      <div class="section-head text-center reveal fade-up">
+        <span class="section-tag">Our Services</span>
+        <h2 class="section-title">A refined laundry service suite for modern living</h2>
+        <p class="section-text">
+          Designed for professionals, families, and premium households who expect
+          excellence in both care and convenience.
+        </p>
+      </div>
+
+      <div class="row g-4 mt-1">
+        <div class="col-md-6 col-lg-4">
+          <article class="service-card reveal fade-up tilt-card">
+            <div class="icon-wrap"><i class="bi bi-basket2-fill"></i></div>
+            <h3>Wash & Fold</h3>
+            <p>Everyday laundry handled with spotless care, premium detergent, and crisp folding.</p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="service-card reveal fade-up tilt-card" data-delay="100">
+            <div class="icon-wrap"><i class="bi bi-badge-hd-fill"></i></div>
+            <h3>Dry Cleaning</h3>
+            <p>Specialized garment treatment for suits, dresses, delicate fabrics, and luxury wear.</p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="service-card reveal fade-up tilt-card" data-delay="150">
+            <div class="icon-wrap"><i class="bi bi-file-earmark-check-fill"></i></div>
+            <h3>Ironing</h3>
+            <p>Sharp, wrinkle-free finishing for a polished appearance and a perfectly dressed week.</p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="service-card reveal fade-up tilt-card" data-delay="200">
+            <div class="icon-wrap"><i class="bi bi-magic"></i></div>
+            <h3>Stain Removal</h3>
+            <p>Advanced stain-targeting methods that protect texture, tone, and garment longevity.</p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="service-card reveal fade-up tilt-card" data-delay="250">
+            <div class="icon-wrap"><i class="bi bi-lightning-charge-fill"></i></div>
+            <h3>Express Service</h3>
+            <p>Fast-track processing for urgent needs without compromising the quality of care.</p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="service-card reveal fade-up tilt-card" data-delay="300">
+            <div class="icon-wrap"><i class="bi bi-truck-front-fill"></i></div>
+            <h3>Pickup & Delivery</h3>
+            <p>Seamless doorstep convenience from collection to return, scheduled around your lifestyle.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-section section-pad" id="why-us">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <div class="reveal fade-right">
+            <span class="section-tag">Why Choose Us</span>
+            <h2 class="section-title text-start">Built like a premium service platform, not a basic laundry shop</h2>
+            <p class="section-text text-start">
+              Every touchpoint is crafted for quality, speed, trust, and a modern
+              high-comfort experience from order to delivery.
+            </p>
+
+            <div class="why-panel floating-soft">
+              <div class="why-panel-glow"></div>
+              <div class="why-panel-content">
+                <h4>Precision Care Protocol</h4>
+                <p>
+                  Garments are sorted, treated, cleaned, finished, and packed
+                  with attention to fabric type, stain conditions, and presentation quality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row g-4">
+            <div class="col-sm-6">
+              <div class="feature-block reveal fade-up">
+                <div class="feature-icon"><i class="bi bi-clock-history"></i></div>
+                <h4>Fast Turnaround</h4>
+                <p>Efficient processing designed for busy schedules and premium convenience.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-block reveal fade-up" data-delay="80">
+                <div class="feature-icon"><i class="bi bi-shield-lock-fill"></i></div>
+                <h4>Fabric Protection</h4>
+                <p>Care methods selected to preserve texture, fit, and garment life.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-block reveal fade-up" data-delay="120">
+                <div class="feature-icon"><i class="bi bi-cash-stack"></i></div>
+                <h4>Affordable Pricing</h4>
+                <p>Premium presentation and service quality with transparent pricing plans.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-block reveal fade-up" data-delay="160">
+                <div class="feature-icon"><i class="bi bi-leaf-fill"></i></div>
+                <h4>Eco-Friendly Process</h4>
+                <p>Conscious cleaning practices that support freshness with less waste.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-block reveal fade-up" data-delay="200">
+                <div class="feature-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <h4>Doorstep Delivery</h4>
+                <p>Pickup and return logistics engineered to fit into your routine.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-block reveal fade-up" data-delay="240">
+                <div class="feature-icon"><i class="bi bi-patch-check-fill"></i></div>
+                <h4>Trusted Experts</h4>
+                <p>Experienced handlers focused on consistency, finishing, and detail.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="process-section section-pad" id="process">
+    <div class="container">
+      <div class="section-head text-center reveal fade-up">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title">A smooth four-step service flow</h2>
+        <p class="section-text">
+          Modern, intuitive, and stress-free from booking to doorstep return.
+        </p>
+      </div>
+
+      <div class="process-wrap mt-5">
+        <div class="process-line"></div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-6 col-lg-3">
+            <div class="process-card reveal fade-up">
+              <div class="step-number">01</div>
+              <div class="process-icon"><i class="bi bi-calendar2-check-fill"></i></div>
+              <h4>Schedule Pickup</h4>
+              <p>Select your service, date, and address in seconds.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="process-card reveal fade-up" data-delay="100">
+              <div class="step-number">02</div>
+              <div class="process-icon"><i class="bi bi-droplet-fill"></i></div>
+              <h4>We Clean</h4>
+              <p>Garments are cleaned using the right treatment for each fabric.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="process-card reveal fade-up" data-delay="180">
+              <div class="step-number">03</div>
+              <div class="process-icon"><i class="bi bi-box2-heart-fill"></i></div>
+              <h4>We Package</h4>
+              <p>Items are neatly finished, folded, or prepared for hanging delivery.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="process-card reveal fade-up" data-delay="260">
+              <div class="step-number">04</div>
+              <div class="process-icon"><i class="bi bi-truck-front-fill"></i></div>
+              <h4>We Deliver</h4>
+              <p>Your fresh garments return to your doorstep, right on time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section section-pad" id="pricing">
+    <div class="container">
+      <div class="section-head text-center reveal fade-up">
+        <span class="section-tag">Pricing Plans</span>
+        <h2 class="section-title">Flexible service tiers for every lifestyle</h2>
+        <p class="section-text">
+          Whether you need essentials, balanced value, or premium care, there’s a plan designed for you.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center mt-2">
+        <div class="col-md-6 col-lg-4">
+          <div class="pricing-card reveal fade-up">
+            <span class="plan-badge">Basic</span>
+            <h3>Basic</h3>
+            <div class="plan-price"><span>&#8358;</span>15,000<span class="small">/week</span></div>
+            <ul class="plan-list">
+              <li><i class="bi bi-check-circle-fill"></i> Wash & Fold</li>
+              <li><i class="bi bi-check-circle-fill"></i> 48-Hour Turnaround</li>
+              <li><i class="bi bi-check-circle-fill"></i> Standard Packaging</li>
+              <li><i class="bi bi-check-circle-fill"></i> Email Support</li>
+            </ul>
+            <a href="#booking" class="btn btn-lux btn-lux-outline w-100">Choose Plan</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="pricing-card pricing-featured reveal fade-up" data-delay="100">
+            <div class="featured-ring"></div>
+            <span class="plan-badge featured">Most Popular</span>
+            <h3>Standard</h3>
+            <div class="plan-price"><span>&#8358;</span>28,000<span class="small">/week</span></div>
+            <ul class="plan-list">
+              <li><i class="bi bi-check-circle-fill"></i> Wash, Fold & Ironing</li>
+              <li><i class="bi bi-check-circle-fill"></i> Free Pickup & Delivery</li>
+              <li><i class="bi bi-check-circle-fill"></i> Priority Processing</li>
+              <li><i class="bi bi-check-circle-fill"></i> Stain Treatment</li>
+              <li><i class="bi bi-check-circle-fill"></i> Premium Packaging</li>
+            </ul>
+            <a href="#booking" class="btn btn-lux btn-lux-primary w-100">Choose Plan</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="pricing-card reveal fade-up" data-delay="160">
+            <span class="plan-badge">Premium</span>
+            <h3>Premium</h3>
+            <div class="plan-price"><span>&#8358;</span>45,000<span class="small">/week</span></div>
+            <ul class="plan-list">
+              <li><i class="bi bi-check-circle-fill"></i> All Standard Features</li>
+              <li><i class="bi bi-check-circle-fill"></i> Dry Cleaning Included</li>
+              <li><i class="bi bi-check-circle-fill"></i> 24-Hour Express Option</li>
+              <li><i class="bi bi-check-circle-fill"></i> Dedicated Garment Care</li>
+              <li><i class="bi bi-check-circle-fill"></i> VIP Priority Scheduling</li>
+            </ul>
+            <a href="#booking" class="btn btn-lux btn-lux-outline w-100">Choose Plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section section-pad" id="testimonials">
+    <div class="container">
+      <div class="section-head text-center reveal fade-up">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Trusted by clients who value quality and ease</h2>
+        <p class="section-text">
+          Real experiences from customers who want more than just clean clothes.
+        </p>
+      </div>
+
+      <div class="testimonial-slider reveal fade-up mt-5">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card active">
+            <div class="testimonial-top">
+              <div class="avatar">AM</div>
+              <div>
+                <h5>Amara M.</h5>
+                <span>Creative Director</span>
+              </div>
+            </div>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              “LuxWash feels like a premium app experience translated into a laundry service.
+              Fast, elegant, and consistently spotless.”
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="avatar">DO</div>
+              <div>
+                <h5>David O.</h5>
+                <span>Consultant</span>
+              </div>
+            </div>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+            </div>
+            <p>
+              “Their pickup and delivery flow is effortless. My shirts come back crisp,
+              well-packed, and exactly when promised.”
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="avatar">IE</div>
+              <div>
+                <h5>Ifeoma E.</h5>
+                <span>Entrepreneur</span>
+              </div>
+            </div>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              “The stain removal and premium finishing are exceptional. It genuinely feels
+              like a luxury service, not a regular laundry vendor.”
+            </p>
+          </div>
+        </div>
+
+        <div class="testimonial-controls">
+          <button class="slider-btn" id="prevTestimonial" aria-label="Previous testimonial">
+            <i class="bi bi-arrow-left"></i>
+          </button>
+          <button class="slider-btn" id="nextTestimonial" aria-label="Next testimonial">
+            <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery-section section-pad" id="gallery">
+    <div class="container">
+      <div class="section-head text-center reveal fade-up">
+        <span class="section-tag">Showcase</span>
+        <h2 class="section-title">A polished visual standard at every step</h2>
+        <p class="section-text">
+          A modern presentation of care, organization, freshness, and premium delivery.
+        </p>
+      </div>
+
+      <div class="gallery-grid mt-5">
+        <div class="gallery-item reveal fade-up">
+          <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1000&q=80" alt="Laundry service folded clothes">
+          <div class="gallery-overlay"><span>Perfectly Folded Finish</span></div>
+        </div>
+        <div class="gallery-item reveal fade-up" data-delay="80">
+          <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=1000&q=80" alt="Dry cleaning garments">
+          <div class="gallery-overlay"><span>Luxury Garment Handling</span></div>
+        </div>
+        <div class="gallery-item reveal fade-up" data-delay="120">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="Well arranged clothing">
+          <div class="gallery-overlay"><span>Premium Wardrobe Care</span></div>
+        </div>
+        <div class="gallery-item reveal fade-up" data-delay="160">
+          <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80" alt="Clean towels and fabric">
+          <div class="gallery-overlay"><span>Freshness & Softness</span></div>
+        </div>
+        <div class="gallery-item reveal fade-up" data-delay="220">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=80" alt="Packaging clothing">
+          <div class="gallery-overlay"><span>Elegant Packaging</span></div>
+        </div>
+        <div class="gallery-item reveal fade-up" data-delay="280">
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1000&q=80" alt="Laundry delivery service">
+          <div class="gallery-overlay"><span>Doorstep Delivery</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="booking-section section-pad" id="booking">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <div class="reveal fade-right">
+            <span class="section-tag">Book Your Service</span>
+            <h2 class="section-title text-start">Schedule premium pickup in minutes</h2>
+            <p class="section-text text-start">
+              Share your service request and we’ll handle the rest with precision, speed, and care.
+            </p>
+
+            <div class="booking-info-card">
+              <div class="booking-info-item">
+                <i class="bi bi-telephone-fill"></i>
+                <div>
+                  <strong>Call Us</strong>
+                  <a href="tel:+2348000000000">+234 800 000 0000</a>
+                </div>
+              </div>
+              <div class="booking-info-item">
+                <i class="bi bi-whatsapp"></i>
+                <div>
+                  <strong>WhatsApp</strong>
+                  <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer">+234 800 000 0000</a>
+                </div>
+              </div>
+              <div class="booking-info-item">
+                <i class="bi bi-envelope-fill"></i>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:hello@luxwash.com">hello@luxwash.com</a>
+                </div>
+              </div>
+              <div class="booking-info-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <div>
+                  <strong>Coverage</strong>
+                  <span>City-wide pickup & delivery</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="booking-form-wrap reveal fade-left">
+            <form id="bookingForm" novalidate>
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control luxury-input" id="name" placeholder="Enter your full name" />
+                  <small class="error-text"></small>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" class="form-control luxury-input" id="email" placeholder="Enter your email" />
+                  <small class="error-text"></small>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control luxury-input" id="phone" placeholder="Enter phone number" />
+                  <small class="error-text"></small>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Service</label>
+                  <select class="form-select luxury-input" id="service">
+                    <option value="">Select a service</option>
+                    <option>Wash & Fold</option>
+                    <option>Dry Cleaning</option>
+                    <option>Ironing</option>
+                    <option>Stain Removal</option>
+                    <option>Express Service</option>
+                    <option>Pickup & Delivery</option>
+                  </select>
+                  <small class="error-text"></small>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">Address</label>
+                  <input type="text" class="form-control luxury-input" id="address" placeholder="Enter pickup address" />
+                  <small class="error-text"></small>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Pickup Date</label>
+                  <input type="date" class="form-control luxury-input" id="date" />
+                  <small class="error-text"></small>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Special Notes</label>
+                  <input type="text" class="form-control luxury-input" id="subject" placeholder="Optional garment notes" />
+                  <small class="error-text"></small>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control luxury-input" id="message" rows="5" placeholder="Describe your laundry needs..."></textarea>
+                  <small class="error-text"></small>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-lux btn-lux-primary btn-lg w-100">
+                    Confirm Booking Request
+                  </button>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-success" id="formSuccess">
+                    <i class="bi bi-check-circle-fill"></i>
+                    Booking request submitted successfully.
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="footer-brand" href="#home">
+            <span class="brand-mark">
+              <i class="bi bi-stars"></i>
+            </span>
+            <span class="brand-text">LuxWash</span>
+          </a>
+          <p class="footer-text">
+            A premium laundry service platform designed with luxury aesthetics,
+            smooth convenience, and meticulous garment care.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-title">Company</h5>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#booking">Booking</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="#services">Wash & Fold</a></li>
+            <li><a href="#services">Dry Cleaning</a></li>
+            <li><a href="#services">Ironing</a></li>
+            <li><a href="#services">Express Service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h5 class="footer-title">Connect</h5>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <ul class="footer-contact">
+            <li><i class="bi bi-telephone-fill"></i> +234 800 000 0000</li>
+            <li><i class="bi bi-envelope-fill"></i> hello@luxwash.com</li>
+            <li><i class="bi bi-geo-alt-fill"></i> Abuja, Nigeria</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 LuxWash. Crafted for a premium digital laundry experience.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
