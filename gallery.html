@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Dan-Wash</title>
+  <meta
+    name="description"
+    content="See the Dan-Wash workflow through our gallery of sorting, pressing, folded orders, packaging, and delivery-ready laundry."
+  />
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("danwash-theme");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const theme = savedTheme === "dark" || savedTheme === "light" ? savedTheme : systemTheme;
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-bg" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="grid-fade"></span>
+  </div>
+
+  <nav class="navbar navbar-expand-lg fixed-top site-navbar" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html">
+        <span class="brand-badge">DW</span>
+        <span class="brand-copy">
+          <strong>Dan-Wash</strong>
+          <small>Laundry & Dry Cleaning</small>
+        </span>
+      </a>
+      <button class="navbar-toggler nav-toggle border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="siteNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door-fill"></i><span>Home</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html"><i class="bi bi-basket2-fill"></i><span>Services</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="why-us.html"><i class="bi bi-patch-check-fill"></i><span>Why Us</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html"><i class="bi bi-tags-fill"></i><span>Pricing</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="bi bi-images"></i><span>Gallery</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="book-us.html"><i class="bi bi-calendar2-check-fill"></i><span>Book Us</span></a></li>
+        </ul>
+        <div class="nav-cta">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle colour theme">
+            <span class="theme-toggle-thumb" aria-hidden="true"></span>
+            <span class="theme-option"><i class="bi bi-sun-fill"></i><span>Light</span></span>
+            <span class="theme-option"><i class="bi bi-moon-stars-fill"></i><span>Dark</span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <div class="section-chip reveal">Gallery</div>
+      <h1 class="page-title reveal">A closer look at the way Dan-Wash handles sorting, finishing, packaging, and delivery.</h1>
+      <p class="page-lead reveal">
+        These visuals reflect the kind of workflow customers ask about most: how clothes are arranged,
+        how finished items look, and the level of care used before delivery.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-space">
+      <div class="container">
+        <div class="gallery-grid">
+          <article class="gallery-card reveal">
+            <img src="https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?auto=format&fit=crop&w=1200&q=80" alt="Folded laundry stacked neatly on a worktable" />
+            <div class="gallery-caption">
+              <div class="gallery-meta"><i class="bi bi-check2-square"></i><span>Folded orders</span></div>
+              <p>Regular wash-and-fold orders are returned arranged for easy wardrobe storage.</p>
+            </div>
+          </article>
+          <article class="gallery-card reveal" data-delay="80">
+            <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=1200&q=80" alt="Pressed shirts hanging on a rack" />
+            <div class="gallery-caption">
+              <div class="gallery-meta"><i class="bi bi-badge-hd"></i><span>Pressed garments</span></div>
+              <p>Office wear and dry-cleaned items are prepared for return on hangers or protected wrap.</p>
+            </div>
+          </article>
+          <article class="gallery-card reveal" data-delay="160">
+            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=1200&q=80" alt="Laundry items packaged and ready to go out" />
+            <div class="gallery-caption">
+              <div class="gallery-meta"><i class="bi bi-box-seam"></i><span>Ready for dispatch</span></div>
+              <p>Finished loads are packaged clearly so customers can receive and sort them quickly.</p>
+            </div>
+          </article>
+          <article class="gallery-card reveal" data-delay="240">
+            <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1200&q=80" alt="Laundry room with sorting baskets and supplies" />
+            <div class="gallery-caption">
+              <div class="gallery-meta"><i class="bi bi-grid-3x3-gap"></i><span>Sorting station</span></div>
+              <p>Orders move through a simple sorting system before any washing or finishing starts.</p>
+            </div>
+          </article>
+          <article class="gallery-card reveal" data-delay="320">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80" alt="Clean towels stacked together after laundering" />
+            <div class="gallery-caption">
+              <div class="gallery-meta"><i class="bi bi-house-heart"></i><span>Household fabrics</span></div>
+              <p>Towels, duvet sets, and guest-room linen are cleaned for homes and short-let properties.</p>
+            </div>
+          </article>
+          <article class="gallery-card reveal" data-delay="400">
+            <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=1200&q=80" alt="Well-kept clothing prepared after cleaning" />
+            <div class="gallery-caption">
+              <div class="gallery-meta"><i class="bi bi-stars"></i><span>Finished wardrobe care</span></div>
+              <p>Formalwear and delicate pieces are returned clean, neat, and presentable for use.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space section-wash">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="detail-card reveal">
+              <span class="meta-label">What the gallery shows</span>
+              <h3>Organisation matters as much as washing.</h3>
+              <p>
+                Customers do not only judge a laundry service by how clean clothes smell. They also notice
+                how items are folded, how shirts are pressed, whether garments are mixed, and how tidy delivery feels.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="note-card reveal" data-delay="100">
+              <h3>Want this standard for your weekly load?</h3>
+              <p>Book a pickup and tell us what kind of order you have, whether it is regular wear, office clothes, or household linen.</p>
+              <a class="btn btn-brand mt-3" href="book-us.html">Book Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Dan-Wash. All rights reserved.</p>
+        <p>Visuals that match the way a careful laundry operation should look.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

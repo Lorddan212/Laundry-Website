@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Us | Dan-Wash</title>
+  <meta
+    name="description"
+    content="Learn how Dan-Wash runs a dependable, well-organised laundry operation with tagged sorting, clear updates, practical pricing, and punctual delivery."
+  />
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("danwash-theme");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const theme = savedTheme === "dark" || savedTheme === "light" ? savedTheme : systemTheme;
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-bg" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="grid-fade"></span>
+  </div>
+
+  <nav class="navbar navbar-expand-lg fixed-top site-navbar" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html">
+        <span class="brand-badge">DW</span>
+        <span class="brand-copy">
+          <strong>Dan-Wash</strong>
+          <small>Laundry & Dry Cleaning</small>
+        </span>
+      </a>
+      <button class="navbar-toggler nav-toggle border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="siteNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door-fill"></i><span>Home</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html"><i class="bi bi-basket2-fill"></i><span>Services</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="why-us.html"><i class="bi bi-patch-check-fill"></i><span>Why Us</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html"><i class="bi bi-tags-fill"></i><span>Pricing</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="bi bi-images"></i><span>Gallery</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="book-us.html"><i class="bi bi-calendar2-check-fill"></i><span>Book Us</span></a></li>
+        </ul>
+        <div class="nav-cta">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle colour theme">
+            <span class="theme-toggle-thumb" aria-hidden="true"></span>
+            <span class="theme-option"><i class="bi bi-sun-fill"></i><span>Light</span></span>
+            <span class="theme-option"><i class="bi bi-moon-stars-fill"></i><span>Dark</span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <div class="section-chip reveal">Why Dan-Wash</div>
+      <h1 class="page-title reveal">We built the operation around fewer excuses, better handling, and cleaner communication.</h1>
+      <p class="page-lead reveal">
+        Customers stay with us because the service feels steady. We show up, separate items properly,
+        keep prices understandable, and return clothes when promised.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-space">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6">
+            <article class="detail-card reveal">
+              <span class="meta-label">Our approach</span>
+              <h3>Dan-Wash was shaped by what customers complain about most.</h3>
+              <p class="body-copy">
+                Late pickup. Mixed-up items. Vague charges. No clear reply on WhatsApp. Clothes returned
+                without proper finishing. We designed our process around fixing those practical issues first.
+              </p>
+              <ul class="check-list">
+                <li>Every order is tagged before processing begins.</li>
+                <li>Routine updates are sent at key stages of the order.</li>
+                <li>Most common item rates and bundles are published clearly.</li>
+                <li>Pickup schedules reflect real route planning instead of unrealistic promises.</li>
+              </ul>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="detail-card reveal" data-delay="100">
+              <span class="meta-label">Who we serve best</span>
+              <h3>Busy professionals, young families, short-let hosts, and anyone tired of starting over with new washers.</h3>
+              <p class="body-copy">
+                We are a strong fit for people who want a dependable recurring service, not just a one-off wash.
+                That means keeping garments properly sorted and building a routine the customer can trust.
+              </p>
+              <ul class="check-list">
+                <li>Weekly home laundry plans</li>
+                <li>Office wear and formal clothing care</li>
+                <li>Airbnb and serviced apartment linen</li>
+                <li>Small-volume commercial support</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space section-wash">
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <div class="col-lg-6">
+            <article class="detail-card reveal">
+              <span class="meta-label">Mission Statement</span>
+              <h3>To make laundry care more dependable, accessible, and stress-free for homes and professionals in Abuja.</h3>
+              <p class="body-copy">
+                Our mission is to remove the usual frustration around laundry by combining proper garment handling,
+                realistic pickup schedules, clear pricing, and responsive customer communication into one service people can trust.
+              </p>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="detail-card reveal" data-delay="100">
+              <span class="meta-label">Vision Statement</span>
+              <h3>To become the most trusted everyday laundry and garment-care brand for busy households across Abuja.</h3>
+              <p class="body-copy">
+                We want Dan-Wash to be known for consistency, order care, and a booking experience that feels simple,
+                modern, and dependable enough to become part of our customers’ weekly routine.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="section-head reveal">
+          <span class="section-chip">What makes us dependable</span>
+          <h2>Real operating standards, not just brand promises</h2>
+          <p>These are the practical systems we use to keep work consistent week after week.</p>
+        </div>
+
+        <div class="three-grid">
+          <article class="detail-card reveal">
+            <i class="bi bi-tags-fill"></i>
+            <h3>Tagged batching</h3>
+            <p>Items are grouped by customer and service type before washing, ironing, or dry cleaning starts.</p>
+          </article>
+          <article class="detail-card reveal" data-delay="80">
+            <i class="bi bi-chat-dots-fill"></i>
+            <h3>WhatsApp-first updates</h3>
+            <p>We use the channel customers actually respond to, especially for pickup changes and delivery timing.</p>
+          </article>
+          <article class="detail-card reveal" data-delay="160">
+            <i class="bi bi-stopwatch-fill"></i>
+            <h3>Practical delivery windows</h3>
+            <p>We plan around area routes and traffic patterns instead of setting impossible city-wide same-time promises.</p>
+          </article>
+          <article class="detail-card reveal" data-delay="240">
+            <i class="bi bi-shield-check"></i>
+            <h3>Fabric-aware handling</h3>
+            <p>Regular laundry and delicate pieces are not treated the same way, especially with office wear and occasion items.</p>
+          </article>
+          <article class="detail-card reveal" data-delay="320">
+            <i class="bi bi-cash-coin"></i>
+            <h3>Transparent rates</h3>
+            <p>Common items and plans are priced upfront, and special fabrics are reviewed before extra work begins.</p>
+          </article>
+          <article class="detail-card reveal" data-delay="400">
+            <i class="bi bi-box-seam-fill"></i>
+            <h3>Clean handover</h3>
+            <p>Orders are returned folded, hung, or wrapped based on the item and service paid for.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="table-shell reveal">
+              <h2 class="page-section-title">How we measure a good order</h2>
+              <table class="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Stage</th>
+                    <th>What we focus on</th>
+                    <th>What the customer notices</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pickup</td>
+                    <td>Accurate address, route timing, item count</td>
+                    <td>Less chasing and clearer arrival expectations</td>
+                  </tr>
+                  <tr>
+                    <td>Sorting</td>
+                    <td>Customer separation and service marking</td>
+                    <td>Lower chance of mix-ups</td>
+                  </tr>
+                  <tr>
+                    <td>Cleaning</td>
+                    <td>Right process for each fabric group</td>
+                    <td>Better finish and garment care</td>
+                  </tr>
+                  <tr>
+                    <td>Packaging</td>
+                    <td>Neat folding or hanging preparation</td>
+                    <td>Clothes return ready to wear or store</td>
+                  </tr>
+                  <tr>
+                    <td>Delivery</td>
+                    <td>On-time handover and customer confirmation</td>
+                    <td>Confidence to rebook without stress</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="note-card reveal">
+              <h3>What customers usually say after the first month</h3>
+              <p>
+                They stop thinking about laundry every week. That is the real value for most customers:
+                a routine that feels organised and does not need constant follow-up.
+              </p>
+              <ul class="check-list">
+                <li>"The pickup window was actually accurate."</li>
+                <li>"My shirts came back better arranged than before."</li>
+                <li>"Pricing was clearer than what I used before."</li>
+                <li>"I liked that they used WhatsApp instead of silence."</li>
+              </ul>
+              <a class="btn btn-brand mt-3" href="book-us.html">Try Dan-Wash</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Dan-Wash. All rights reserved.</p>
+        <p>Mon-Sat: 7:00am - 8:00pm</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

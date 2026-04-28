@@ -1,374 +1,293 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const html = document.documentElement;
+  const body = document.body;
   const navbar = document.getElementById("mainNavbar");
   const themeToggle = document.getElementById("themeToggle");
   const backToTop = document.getElementById("backToTop");
   const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-  const sections = document.querySelectorAll("section[id], header[id]");
   const revealElements = document.querySelectorAll(".reveal");
+  const animatedSections = document.querySelectorAll(".section-space, .page-hero, .hero-shell, .site-footer");
   const bookingForm = document.getElementById("bookingForm");
-  const formSuccess = document.getElementById("formSuccess");
-  const testimonialCards = document.querySelectorAll(".testimonial-card");
-  const prevBtn = document.getElementById("prevTestimonial");
-  const nextBtn = document.getElementById("nextTestimonial");
-  const tiltCards = document.querySelectorAll(".tilt-card");
-  const heroVisual = document.querySelector(".hero-visual");
+  const year = document.getElementById("year");
+  const heroPanel = document.querySelector(".hero-panel");
+  const dateInput = document.getElementById("pickupDate");
+  const orbs = document.querySelectorAll(".orb");
 
-  /* =========================================================
-     THEME TOGGLE
-  ========================================================= */
-  const savedTheme = localStorage.getItem("luxwash-theme");
-  if (savedTheme) {
-    html.setAttribute("data-theme", savedTheme);
+  const scrollProgress = document.createElement("div");
+  scrollProgress.className = "scroll-progress";
+  body.prepend(scrollProgress);
+
+  window.requestAnimationFrame(() => {
+    body.classList.add("page-ready");
+  });
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = html.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("danwash-theme", nextTheme);
+    });
   }
 
-  themeToggle.addEventListener("click", () => {
-    const currentTheme = html.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    html.setAttribute("data-theme", newTheme);
-    localStorage.setItem("luxwash-theme", newTheme);
-  });
-
-  /* =========================================================
-     NAVBAR SCROLL + BACK TO TOP
-  ========================================================= */
-  const handleScrollEffects = () => {
-    if (window.scrollY > 30) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
+  const handleScroll = () => {
+    if (navbar) {
+      navbar.classList.toggle("scrolled", window.scrollY > 24);
     }
 
-    if (window.scrollY > 500) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
+    if (backToTop) {
+      backToTop.classList.toggle("show", window.scrollY > 420);
+    }
+
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+    scrollProgress.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
+
+    if (orbs.length) {
+      orbs.forEach((orb, index) => {
+        const depth = (index + 1) * 10;
+        const offset = window.scrollY / (18 + depth);
+        orb.style.setProperty("--scroll-shift", `${offset}px`);
+      });
     }
   };
 
-  handleScrollEffects();
-  window.addEventListener("scroll", handleScrollEffects);
+  handleScroll();
+  window.addEventListener("scroll", handleScroll);
 
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  if (backToTop) {
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+      link.classList.add("active");
+    }
   });
 
-  /* =========================================================
-     ACTIVE NAV LINK ON SCROLL
-  ========================================================= */
-  const activateNavOnScroll = () => {
-    let currentSection = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 140;
-      const sectionHeight = section.offsetHeight;
-
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        currentSection = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      const href = link.getAttribute("href").replace("#", "");
-      if (href === currentSection) {
-        link.classList.add("active");
-      }
-    });
-  };
-
-  activateNavOnScroll();
-  window.addEventListener("scroll", activateNavOnScroll);
-
-  /* =========================================================
-     COLLAPSE MOBILE NAV ON LINK CLICK
-  ========================================================= */
-  const navCollapse = document.getElementById("navMenu");
-  const bsCollapse = navCollapse ? new bootstrap.Collapse(navCollapse, { toggle: false }) : null;
+  const navCollapse = document.getElementById("siteNav");
+  const collapseInstance =
+    navCollapse && typeof bootstrap !== "undefined"
+      ? new bootstrap.Collapse(navCollapse, { toggle: false })
+      : null;
 
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      if (window.innerWidth < 992 && navCollapse.classList.contains("show")) {
-        bsCollapse.hide();
+      if (window.innerWidth < 992 && navCollapse && navCollapse.classList.contains("show") && collapseInstance) {
+        collapseInstance.hide();
       }
     });
   });
 
-  /* =========================================================
-     REVEAL ON SCROLL
-  ========================================================= */
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.getAttribute("data-delay");
-          if (delay) {
-            entry.target.style.transitionDelay = `${delay}ms`;
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.getAttribute("data-delay");
+            if (delay) {
+              entry.target.style.transitionDelay = `${delay}ms`;
+            }
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
           }
-          entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+        });
+      },
+      { threshold: 0.14 }
+    );
 
-  revealElements.forEach((el) => revealObserver.observe(el));
+    revealElements.forEach((element) => revealObserver.observe(element));
 
-  /* =========================================================
-     TILT CARDS
-  ========================================================= */
-  tiltCards.forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    animatedSections.forEach((section) => sectionObserver.observe(section));
+  } else {
+    revealElements.forEach((element) => element.classList.add("visible"));
+    animatedSections.forEach((section) => section.classList.add("in-view"));
+  }
+
+  if (heroPanel) {
+    window.addEventListener("mousemove", (event) => {
       if (window.innerWidth < 992) return;
 
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * -6;
-      const rotateY = ((x - centerX) / centerX) * 6;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+      const offsetX = (window.innerWidth / 2 - event.clientX) / 70;
+      const offsetY = (window.innerHeight / 2 - event.clientY) / 70;
+      heroPanel.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
     });
 
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "";
-    });
-  });
-
-  /* =========================================================
-     HERO PARALLAX
-  ========================================================= */
-  if (heroVisual) {
-    window.addEventListener("mousemove", (e) => {
-      if (window.innerWidth < 992) return;
-
-      const x = (window.innerWidth / 2 - e.clientX) / 45;
-      const y = (window.innerHeight / 2 - e.clientY) / 45;
-
-      heroVisual.style.transform = `translate(${x}px, ${y}px)`;
+    heroPanel.addEventListener("mouseleave", () => {
+      heroPanel.style.transform = "translate(0, 0)";
     });
   }
 
-  /* =========================================================
-     TESTIMONIAL SLIDER
-  ========================================================= */
-  let testimonialIndex = 0;
-  let testimonialInterval;
-
-  const showTestimonial = (index) => {
-    testimonialCards.forEach((card, i) => {
-      card.classList.toggle("active", i === index);
-    });
-  };
-
-  const nextTestimonial = () => {
-    testimonialIndex = (testimonialIndex + 1) % testimonialCards.length;
-    showTestimonial(testimonialIndex);
-  };
-
-  const prevTestimonial = () => {
-    testimonialIndex = (testimonialIndex - 1 + testimonialCards.length) % testimonialCards.length;
-    showTestimonial(testimonialIndex);
-  };
-
-  const startTestimonialAuto = () => {
-    testimonialInterval = setInterval(nextTestimonial, 5000);
-  };
-
-  const resetTestimonialAuto = () => {
-    clearInterval(testimonialInterval);
-    startTestimonialAuto();
-  };
-
-  if (testimonialCards.length) {
-    showTestimonial(testimonialIndex);
-    startTestimonialAuto();
-
-    nextBtn.addEventListener("click", () => {
-      nextTestimonial();
-      resetTestimonialAuto();
-    });
-
-    prevBtn.addEventListener("click", () => {
-      prevTestimonial();
-      resetTestimonialAuto();
-    });
+  if (year) {
+    year.textContent = new Date().getFullYear();
   }
 
-  /* =========================================================
-     FORM VALIDATION
-  ========================================================= */
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+  }
+
+  if (!bookingForm) {
+    return;
+  }
+
   const fields = {
-    name: document.getElementById("name"),
-    email: document.getElementById("email"),
+    fullName: document.getElementById("fullName"),
     phone: document.getElementById("phone"),
+    email: document.getElementById("email"),
+    area: document.getElementById("area"),
     service: document.getElementById("service"),
+    pickupDate: document.getElementById("pickupDate"),
+    pickupWindow: document.getElementById("pickupWindow"),
     address: document.getElementById("address"),
-    date: document.getElementById("date"),
-    message: document.getElementById("message"),
+    notes: document.getElementById("notes")
   };
 
-  const getErrorElement = (input) => input.parentElement.querySelector(".error-text");
+  const successBox = document.getElementById("formSuccess");
+
+  const getErrorElement = (input) => {
+    const wrapper = input.closest(".field-wrap");
+    return wrapper ? wrapper.querySelector(".error-text") : null;
+  };
 
   const setError = (input, message) => {
+    if (!input) return;
     input.classList.add("input-invalid");
-    getErrorElement(input).textContent = message;
+    const errorEl = getErrorElement(input);
+    if (errorEl) {
+      errorEl.textContent = message;
+    }
   };
 
   const clearError = (input) => {
+    if (!input) return;
     input.classList.remove("input-invalid");
-    getErrorElement(input).textContent = "";
+    const errorEl = getErrorElement(input);
+    if (errorEl) {
+      errorEl.textContent = "";
+    }
   };
 
-  const validateEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-  };
-
-  const validatePhone = (phone) => {
-    return /^[0-9+\-\s()]{7,20}$/.test(phone.trim());
-  };
-
-  const validateDate = (dateValue) => {
-    if (!dateValue) return false;
-    const selectedDate = new Date(dateValue);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    return selectedDate >= today;
-  };
+  const emailValid = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+  const phoneValid = (value) => /^[0-9+\-\s()]{10,20}$/.test(value.trim());
 
   const validateForm = () => {
-    let isValid = true;
+    let valid = true;
 
-    // Name
-    if (!fields.name.value.trim()) {
-      setError(fields.name, "Please enter your full name.");
-      isValid = false;
-    } else if (fields.name.value.trim().length < 3) {
-      setError(fields.name, "Name must be at least 3 characters.");
-      isValid = false;
+    if (!fields.fullName.value.trim() || fields.fullName.value.trim().length < 3) {
+      setError(fields.fullName, "Enter your full name.");
+      valid = false;
     } else {
-      clearError(fields.name);
+      clearError(fields.fullName);
     }
 
-    // Email
-    if (!fields.email.value.trim()) {
-      setError(fields.email, "Please enter your email address.");
-      isValid = false;
-    } else if (!validateEmail(fields.email.value)) {
-      setError(fields.email, "Please enter a valid email address.");
-      isValid = false;
-    } else {
-      clearError(fields.email);
-    }
-
-    // Phone
-    if (!fields.phone.value.trim()) {
-      setError(fields.phone, "Please enter your phone number.");
-      isValid = false;
-    } else if (!validatePhone(fields.phone.value)) {
-      setError(fields.phone, "Please enter a valid phone number.");
-      isValid = false;
+    if (!fields.phone.value.trim() || !phoneValid(fields.phone.value)) {
+      setError(fields.phone, "Enter a valid phone number.");
+      valid = false;
     } else {
       clearError(fields.phone);
     }
 
-    // Service
-    if (!fields.service.value.trim()) {
-      setError(fields.service, "Please select a service.");
-      isValid = false;
+    if (!fields.email.value.trim() || !emailValid(fields.email.value)) {
+      setError(fields.email, "Enter a valid email address.");
+      valid = false;
+    } else {
+      clearError(fields.email);
+    }
+
+    if (!fields.area.value) {
+      setError(fields.area, "Choose your pickup area.");
+      valid = false;
+    } else {
+      clearError(fields.area);
+    }
+
+    if (!fields.service.value) {
+      setError(fields.service, "Select a service type.");
+      valid = false;
     } else {
       clearError(fields.service);
     }
 
-    // Address
-    if (!fields.address.value.trim()) {
-      setError(fields.address, "Please enter your pickup address.");
-      isValid = false;
-    } else if (fields.address.value.trim().length < 6) {
-      setError(fields.address, "Address looks too short.");
-      isValid = false;
+    if (!fields.pickupDate.value) {
+      setError(fields.pickupDate, "Choose your preferred pickup date.");
+      valid = false;
+    } else {
+      clearError(fields.pickupDate);
+    }
+
+    if (!fields.pickupWindow.value) {
+      setError(fields.pickupWindow, "Select a pickup window.");
+      valid = false;
+    } else {
+      clearError(fields.pickupWindow);
+    }
+
+    if (!fields.address.value.trim() || fields.address.value.trim().length < 8) {
+      setError(fields.address, "Enter a clear pickup address.");
+      valid = false;
     } else {
       clearError(fields.address);
     }
 
-    // Date
-    if (!fields.date.value.trim()) {
-      setError(fields.date, "Please choose a pickup date.");
-      isValid = false;
-    } else if (!validateDate(fields.date.value)) {
-      setError(fields.date, "Pickup date cannot be in the past.");
-      isValid = false;
+    if (!fields.notes.value.trim() || fields.notes.value.trim().length < 10) {
+      setError(fields.notes, "Add a short note about the items or request.");
+      valid = false;
     } else {
-      clearError(fields.date);
+      clearError(fields.notes);
     }
 
-    // Message
-    if (!fields.message.value.trim()) {
-      setError(fields.message, "Please enter a short message.");
-      isValid = false;
-    } else if (fields.message.value.trim().length < 10) {
-      setError(fields.message, "Message must be at least 10 characters.");
-      isValid = false;
-    } else {
-      clearError(fields.message);
-    }
-
-    return isValid;
+    return valid;
   };
 
   Object.values(fields).forEach((field) => {
-    field.addEventListener("input", () => {
-      if (field.classList.contains("input-invalid")) {
-        validateForm();
-      }
-    });
-
-    field.addEventListener("blur", () => {
-      validateForm();
-    });
+    if (!field) return;
+    field.addEventListener("input", () => clearError(field));
+    field.addEventListener("change", () => clearError(field));
   });
 
-  bookingForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    formSuccess.classList.remove("show");
+  bookingForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    if (validateForm()) {
-      formSuccess.classList.add("show");
+    if (!validateForm()) {
+      return;
+    }
+
+    const submitButton = bookingForm.querySelector('button[type="submit"]');
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending Request...";
+    }
+
+    window.setTimeout(() => {
       bookingForm.reset();
 
-      Object.values(fields).forEach((field) => clearError(field));
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Pickup Request";
+      }
 
-      setTimeout(() => {
-        formSuccess.classList.remove("show");
-      }, 5000);
-    }
+      if (successBox) {
+        successBox.classList.remove("d-none");
+      }
+    }, 900);
   });
-
-  /* =========================================================
-     BUTTON MICRO INTERACTION
-  ========================================================= */
-  document.querySelectorAll(".btn-lux, .slider-btn, .footer-socials a").forEach((button) => {
-    button.addEventListener("mousemove", (e) => {
-      const rect = button.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      button.style.setProperty("--mx", `${x}px`);
-      button.style.setProperty("--my", `${y}px`);
-    });
-  });
-
-  /* =========================================================
-     SET MIN DATE FOR BOOKING
-  ========================================================= */
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, "0");
-  const dd = String(today.getDate()).padStart(2, "0");
-  fields.date.min = `${yyyy}-${mm}-${dd}`;
 });
