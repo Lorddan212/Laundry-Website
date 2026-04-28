@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Dan-Wash</title>
+  <meta
+    name="description"
+    content="Explore Dan-Wash services including wash and fold, ironing, dry cleaning, duvet cleaning, and recurring laundry support in Abuja."
+  />
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("danwash-theme");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const theme = savedTheme === "dark" || savedTheme === "light" ? savedTheme : systemTheme;
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-bg" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="grid-fade"></span>
+  </div>
+
+  <nav class="navbar navbar-expand-lg fixed-top site-navbar" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html">
+        <span class="brand-badge">DW</span>
+        <span class="brand-copy">
+          <strong>Dan-Wash</strong>
+          <small>Laundry & Dry Cleaning</small>
+        </span>
+      </a>
+      <button class="navbar-toggler nav-toggle border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="siteNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door-fill"></i><span>Home</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html"><i class="bi bi-basket2-fill"></i><span>Services</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="why-us.html"><i class="bi bi-patch-check-fill"></i><span>Why Us</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html"><i class="bi bi-tags-fill"></i><span>Pricing</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="bi bi-images"></i><span>Gallery</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="book-us.html"><i class="bi bi-calendar2-check-fill"></i><span>Book Us</span></a></li>
+        </ul>
+        <div class="nav-cta">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle colour theme">
+            <span class="theme-toggle-thumb" aria-hidden="true"></span>
+            <span class="theme-option"><i class="bi bi-sun-fill"></i><span>Light</span></span>
+            <span class="theme-option"><i class="bi bi-moon-stars-fill"></i><span>Dark</span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <div class="section-chip reveal">Services</div>
+      <h1 class="page-title reveal">Laundry support for homes, professionals, guest apartments, and small businesses.</h1>
+      <p class="page-lead reveal">
+        Dan-Wash handles the work most customers actually need: daily laundry, office wear care,
+        dry cleaning for delicate garments, duvet and bedsheet cleaning, and recurring pickups.
+      </p>
+      <div class="page-hero-card reveal">
+        <div class="stats-strip">
+          <div>
+            <strong>48 hrs</strong>
+            <span>Standard turnaround for most laundry loads</span>
+          </div>
+          <div>
+            <strong>24 hrs</strong>
+            <span>Express option for selected orders</span>
+          </div>
+          <div>
+            <strong>Tagged</strong>
+            <span>Sorting system for customer and fabric separation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-space">
+      <div class="container">
+        <div class="service-grid">
+          <article class="detail-card reveal">
+            <span class="meta-label">Everyday laundry</span>
+            <h3>Wash & Fold</h3>
+            <p>Ideal for clothes used at home or work throughout the week. Items are sorted by colour and fabric before washing.</p>
+            <ul class="check-list">
+              <li>T-shirts, tops, jeans, shorts, polos</li>
+              <li>Children's clothing and school wear</li>
+              <li>Folded and packaged for easy storage</li>
+            </ul>
+          </article>
+          <article class="detail-card reveal" data-delay="80">
+            <span class="meta-label">Pressed for use</span>
+            <h3>Ironing & Steam Finish</h3>
+            <p>For customers who want ready-to-wear clothes returned neatly pressed for meetings, church, school, or travel.</p>
+            <ul class="check-list">
+              <li>Shirts, blouses, trousers, kaftans</li>
+              <li>Separate finish options for folding or hanging</li>
+              <li>Good for weekly office wear batches</li>
+            </ul>
+          </article>
+          <article class="detail-card reveal" data-delay="160">
+            <span class="meta-label">Special care</span>
+            <h3>Dry Cleaning</h3>
+            <p>Handled for structured or delicate garments that need extra attention and proper finishing.</p>
+            <ul class="check-list">
+              <li>Suits, blazers, dresses, gowns</li>
+              <li>Silk, lace, uniforms, aso-oke support</li>
+              <li>Spot treatment done before cleaning</li>
+            </ul>
+          </article>
+          <article class="detail-card reveal" data-delay="240">
+            <span class="meta-label">Bulky household items</span>
+            <h3>Duvets, Bedsheets & Towels</h3>
+            <p>Useful for homes, serviced apartments, and Airbnb operators that need linen refreshed regularly.</p>
+            <ul class="check-list">
+              <li>Duvets, pillows, blankets, bedsheets</li>
+              <li>Towels and guest-room sets</li>
+              <li>Care adjusted to item weight and finish</li>
+            </ul>
+          </article>
+          <article class="detail-card reveal" data-delay="320">
+            <span class="meta-label">Fast turnaround</span>
+            <h3>Express Laundry</h3>
+            <p>For urgent work where a faster slot is needed. Availability depends on volume and pickup time.</p>
+            <ul class="check-list">
+              <li>Same-day review on selected requests</li>
+              <li>24-hour turnaround for approved loads</li>
+              <li>Best for office wear and lighter batches</li>
+            </ul>
+          </article>
+          <article class="detail-card reveal" data-delay="400">
+            <span class="meta-label">Recurring support</span>
+            <h3>Weekly and Monthly Plans</h3>
+            <p>For customers who do not want to rebook every single week. Pickup slots are reserved in advance.</p>
+            <ul class="check-list">
+              <li>Family homes with regular volume</li>
+              <li>Professionals who want routine pickup</li>
+              <li>Short-let, salon, and gym support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space section-wash">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-chip">How work moves</span>
+          <h2>Our service flow is simple because customers care about speed, safety, and no mix-ups.</h2>
+          <p>We keep the process practical and transparent, from pickup confirmation to delivery return.</p>
+        </div>
+
+        <div class="timeline-row">
+          <article class="timeline-card reveal">
+            <div class="timeline-icon"><i class="bi bi-calendar2-check"></i></div>
+            <h3>1. Pickup is booked</h3>
+            <p>We confirm the date, time window, area, and service type before dispatching pickup.</p>
+          </article>
+          <article class="timeline-card reveal" data-delay="80">
+            <div class="timeline-icon"><i class="bi bi-tags-fill"></i></div>
+            <h3>2. Items are logged</h3>
+            <p>Orders are grouped, tagged, and marked for washing, ironing, or dry cleaning.</p>
+          </article>
+          <article class="timeline-card reveal" data-delay="160">
+            <div class="timeline-icon"><i class="bi bi-droplet-fill"></i></div>
+            <h3>3. Cleaning starts</h3>
+            <p>Loads move through the right handling path based on garment type and instructions.</p>
+          </article>
+          <article class="timeline-card reveal" data-delay="240">
+            <div class="timeline-icon"><i class="bi bi-truck-front-fill"></i></div>
+            <h3>4. Delivery is arranged</h3>
+            <p>Finished orders are folded or hung, packaged, and returned within the agreed window.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="table-shell reveal">
+              <h2 class="page-section-title">Coverage and common service notes</h2>
+              <table class="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Area</th>
+                    <th>Pickup Window</th>
+                    <th>Common Orders</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Wuse</td>
+                    <td>Morning / Evening</td>
+                    <td>Family wash and fold, office wear</td>
+                  </tr>
+                  <tr>
+                    <td>Gwarinpa</td>
+                    <td>Morning / Evening</td>
+                    <td>Students, professionals, shared flats</td>
+                  </tr>
+                  <tr>
+                    <td>Jabi</td>
+                    <td>Afternoon / Evening</td>
+                    <td>Corporate wear, recurring plans</td>
+                  </tr>
+                  <tr>
+                    <td>Maitama</td>
+                    <td>Morning / Evening</td>
+                    <td>Household loads, duvet cleaning</td>
+                  </tr>
+                  <tr>
+                    <td>Asokoro & Lokogoma</td>
+                    <td>Scheduled routes</td>
+                    <td>Dry cleaning and apartment linen</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="coverage-card reveal">
+              <h3>Before you book</h3>
+              <ul class="check-list">
+                <li>Separate heavily stained items in your note so we can review them properly.</li>
+                <li>Express jobs depend on weight, garment mix, and the time your pickup is confirmed.</li>
+                <li>Special fabrics or ceremonial wear may need inspection before a final quote is given.</li>
+                <li>For large commercial volume, we recommend calling or using WhatsApp before booking online.</li>
+              </ul>
+              <a class="btn btn-brand mt-3" href="book-us.html">Book a Pickup</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Dan-Wash. All rights reserved.</p>
+        <p>FCT - Abuja</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

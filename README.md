@@ -1,202 +1,167 @@
-# LuxWash Laundry Website
+# Dan-Wash Website
 
-LuxWash is a modern single-page laundry service website built with HTML, CSS, and JavaScript. It presents a premium laundry brand with a polished landing page, service highlights, pricing plans in Naira, testimonials, gallery content, and a booking form for pickup requests.
-
-## Live Demo
-
-Add your deployed project URL here:
-
-```text
-https://your-live-demo-link.com
-```
-
-## Preview
-
-You can add screenshots to this repository and display them here for a stronger GitHub presentation.
-
-Suggested screenshot names:
-
-- `assets/preview-home.png`
-- `assets/preview-pricing.png`
-- `assets/preview-booking.png`
-
-Example markdown:
-
-```md
-![LuxWash Homepage](assets/preview-home.png)
-```
+Dan-Wash is a modern multi-page laundry and dry-cleaning website built with HTML, CSS, and vanilla JavaScript. It presents a more realistic laundry business presence for Abuja, with dedicated pages for services, trust-building content, pricing, gallery, and booking.
 
 ## Overview
 
-This project is a static frontend website designed for a laundry business that wants a sleek, high-end online presence. The site includes smooth interactions, responsive sections, dark and light theme support, and a booking form with client-side validation.
+This project was redesigned from a generic landing page into a structured business website for **Dan-Wash Laundry & Dry Cleaning**. It uses a shared design system, responsive layouts, animated interactions, a light/dark theme toggle, and a booking form with client-side validation.
+
+The current business details used in the site are:
+
+- Phone: `08109368514`
+- Email: `jegbefumhendaniel@gmail.com`
+- WhatsApp: `+234 8109368514`
+- Location: `FCT - Abuja`
+
+## Design Direction
+
+The visual system now follows the uploaded `DESIGN.md` reference:
+
+- Editorial-inspired color palette with electric blue, deep indigo, magenta, and slate-lavender accents
+- `Manrope` for display and headline typography
+- `Inter` for body and interface text
+- Glassy floating navigation and layered surfaces
+- Motion-focused polish with scroll reveals, hover transitions, and page-entry effects
+
+## Pages
+
+- `index.html`  
+  Homepage with hero content, service summary, key benefits, pricing preview, gallery preview, and CTA sections.
+
+- `services.html`  
+  Full service breakdown including wash and fold, ironing, dry cleaning, household fabrics, express work, and recurring plans.
+
+- `why-us.html`  
+  Trust and operations page explaining Dan-Wash’s workflow, standards, and customer value.
+
+- `pricing.html`  
+  Pricing overview with featured plans, item rates, and recurring service notes.
+
+- `gallery.html`  
+  Image-driven page showing the brand presentation, workflow quality, and laundry finishing standards.
+
+- `book-us.html`  
+  Booking page with contact details, pickup zones, booking form, and FAQ content.
+
+## Shared Assets
+
+- `style.css`  
+  Shared design system, typography, colors, layout, card styling, navbar styling, theme toggle styling, animation utilities, and responsive behavior.
+
+- `script.js`  
+  Shared interaction logic including:
+  - theme persistence with `localStorage`
+  - scroll progress bar
+  - reveal-on-scroll effects
+  - navbar scroll behavior
+  - back-to-top button
+  - background motion
+  - booking form validation and success state
 
 ## Features
 
-- Responsive single-page layout
-- Premium hero section with animated visual elements
-- Service, benefits, and process sections
-- Weekly pricing plans displayed in Naira
-- Testimonial slider with auto-rotation and manual controls
-- Image gallery for visual brand presentation
-- Booking section with phone, WhatsApp, email, and coverage details
-- Booking form with frontend validation and success feedback
-- Dark/light theme toggle with `localStorage` persistence
-- Scroll reveal animations and back-to-top button
-
-## Tech Stack
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- [Bootstrap 5.3.3](https://getbootstrap.com/)
-- [Bootstrap Icons 1.11.3](https://icons.getbootstrap.com/)
+- Multi-page business website structure
+- Responsive layout for desktop and mobile
+- Shared navigation across all pages
+- Navbar icons for quick visual scanning
+- Professional segmented light/dark theme toggle
+- Animated page entry, reveal, hover, and scroll effects
+- Abuja-focused service and coverage content
+- Booking form with frontend validation
+- Back-to-top button and scroll progress indicator
 
 ## Project Structure
 
 ```text
-Laundry Website 2/
+Laundry Website/
 |-- index.html
+|-- services.html
+|-- why-us.html
+|-- pricing.html
+|-- gallery.html
+|-- book-us.html
 |-- style.css
 |-- script.js
 `-- README.md
 ```
 
-## File Guide
-
-### `index.html`
-
-Contains the full page structure, including:
-
-- Navigation bar
-- Hero section
-- Services section
-- Why choose us section
-- Process section
-- Pricing plans
-- Testimonials
-- Gallery
-- Booking form
-- Footer
-
-### `style.css`
-
-Contains all custom styling for:
-
-- Color variables and theme tokens
-- Layout, spacing, and responsive behavior
-- Buttons, cards, sections, and form styling
-- Animation helpers and visual effects
-- Light and dark mode appearance
-
-### `script.js`
-
-Handles interactive behavior such as:
-
-- Theme switching
-- Sticky navbar effects
-- Active nav link updates on scroll
-- Reveal-on-scroll animation triggers
-- Card tilt effects
-- Hero parallax effect
-- Testimonial slider controls
-- Booking form validation
-- Minimum booking date restriction
-- Back-to-top button behavior
-
 ## Getting Started
 
-Because this is a static website, no installation step is required.
+This is a static website, so no build step is required.
 
-1. Download or clone the project.
+1. Clone or download the project.
 2. Open `index.html` in your browser.
 
-For a smoother development workflow, you can also run it with a local live server extension in your code editor.
-
-## Customization
-
-You can easily adapt this project for a real laundry business by updating the following:
-
-- Business name and branding in `index.html`
-- Contact details such as phone, WhatsApp, email, and location
-- Pricing plans and service descriptions
-- Gallery images
-- Social media links in the footer
-- Theme colors in `style.css`
-- Booking form messaging and validation behavior in `script.js`
-
-## Brand Details To Update
-
-Before publishing for a real business, replace the sample content below with your actual details:
-
-- Business name: `LuxWash`
-- Phone number: `+234 800 000 0000`
-- WhatsApp link: `https://wa.me/2348000000000`
-- Email address: `hello@luxwash.com`
-- Location: `Abuja, Nigeria`
-- Social media links in the footer
-- Copyright line in the footer
-
-## Current Booking Form Behavior
-
-The booking form currently performs client-side validation only. Submitting the form:
-
-- checks required fields
-- validates email and phone number format
-- prevents past pickup dates
-- shows a success message on valid submission
-
-It does not yet send data to a backend service, email address, database, or WhatsApp automatically.
+For easier editing and preview during development, use a local live server extension in your editor.
 
 ## External Dependencies
 
-The project loads the following libraries from CDNs:
+The project loads the following from CDNs:
 
-- Bootstrap CSS
-- Bootstrap JavaScript bundle
-- Bootstrap Icons
+- [Bootstrap 5.3.3](https://getbootstrap.com/)
+- [Bootstrap Icons 1.11.3](https://icons.getbootstrap.com/)
+- Google Fonts (`Manrope` and `Inter`)
 
-An internet connection is required for those CDN assets unless you replace them with local copies.
+If you need offline use, replace these CDN links with local asset copies.
+
+## Booking Form Behavior
+
+The booking form on `book-us.html` currently performs client-side validation only.
+
+It validates:
+
+- full name
+- phone number
+- email address
+- pickup area
+- service type
+- pickup date
+- pickup window
+- pickup address
+- order notes
+
+It does **not** currently send data to a backend, database, email service, or WhatsApp automatically.
+
+## Customization Notes
+
+You can adapt the site further by editing:
+
+- business copy in the HTML pages
+- coverage areas and pickup windows
+- service descriptions and pricing
+- gallery images
+- social/contact links
+- theme tokens and animations in `style.css`
+- form behavior in `script.js`
 
 ## Deployment
 
-This site can be deployed easily on any static hosting platform, including:
+This project can be deployed on any static hosting platform, including:
 
 - GitHub Pages
 - Netlify
 - Vercel
 - Firebase Hosting
-- Any shared hosting service with HTML support
-
-## GitHub README Tips
-
-To make this project stand out on GitHub, you can also add:
-
-- A real live demo link
-- Screenshots or GIF previews
-- Your name or business name as the author
-- A license such as MIT
-- A short changelog or roadmap section
+- standard shared hosting with HTML support
 
 ## Suggested Next Improvements
 
-- Connect the booking form to a backend or email service
-- Replace placeholder contact details with real business information
-- Add SEO metadata and social sharing tags
-- Optimize images for faster loading
-- Add real testimonials and business photos
-- Connect booking requests to WhatsApp or email notifications
+- Connect the booking form to a real backend or email workflow
+- Add real service photos and local Abuja business imagery
+- Add SEO/social metadata for all pages
+- Add a sitemap and favicon set
+- Add WhatsApp quick-book integration from the booking form
+- Add analytics or form conversion tracking
 
 ## Author
 
-Add your details here:
+Dan-Wash Laundry & Dry Cleaning
 
-```text
-Name: Your Name or Business Name
-Website: https://yourwebsite.com
-Email: your@email.com
-```
+- Phone: `08109368514`
+- Email: `jegbefumhendaniel@gmail.com`
+- WhatsApp: `+234 8109368514`
+- Location: `FCT - Abuja`
 
 ## License
 
-This project is available for personal or commercial customization. Add your preferred license here if you want formal usage terms.
-# Laundry-Website
+This project is available for personal or commercial customization. Add your preferred license if you want formal usage terms.
