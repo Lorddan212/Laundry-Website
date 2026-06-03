@@ -1,74 +1,67 @@
 # Dan-Wash Website
 
-Dan-Wash is a modern multi-page laundry and dry-cleaning website built with HTML, CSS, and vanilla JavaScript. It presents a more realistic laundry business presence for Abuja, with dedicated pages for services, trust-building content, pricing, gallery, and booking.
+Dan-Wash is a static multi-page laundry and dry-cleaning website for an Abuja-based laundry service. It is built with HTML, CSS, Bootstrap, Bootstrap Icons, Google Fonts, and vanilla JavaScript.
 
 ## Overview
 
-This project was redesigned from a generic landing page into a structured business website for **Dan-Wash Laundry & Dry Cleaning**. It uses a shared design system, responsive layouts, animated interactions, a light/dark theme toggle, and a booking form with client-side validation.
+The site presents Dan-Wash as a practical laundry and garment-care business with separate pages for the homepage, services, trust content, pricing, gallery, and booking. The latest UI pass gives the site a cleaner brand system with fresh green, deep ink, white space, and warm gold accents.
 
-The current business details used in the site are:
+Current business details used across the site:
 
 - Phone: `08109368514`
-- Email: `jegbefumhendaniel@gmail.com`
 - WhatsApp: `+234 8109368514`
+- Email: `jegbefumhendaniel@gmail.com`
 - Location: `FCT - Abuja`
-
-## Design Direction
-
-The visual system now follows the uploaded `DESIGN.md` reference:
-
-- Editorial-inspired color palette with electric blue, deep indigo, magenta, and slate-lavender accents
-- `Manrope` for display and headline typography
-- `Inter` for body and interface text
-- Glassy floating navigation and layered surfaces
-- Motion-focused polish with scroll reveals, hover transitions, and page-entry effects
+- Hours: `Mon-Sat: 7:00am - 8:00pm`
 
 ## Pages
 
 - `index.html`  
-  Homepage with hero content, service summary, key benefits, pricing preview, gallery preview, and CTA sections.
+  Homepage with hero content, pickup CTAs, metrics, page highlights, summary cards, and a final booking CTA.
 
 - `services.html`  
-  Full service breakdown including wash and fold, ironing, dry cleaning, household fabrics, express work, and recurring plans.
+  Service catalog for wash and fold, ironing, dry cleaning, household fabrics, express laundry, and recurring plans. Service cards use larger image thumbnails.
 
 - `why-us.html`  
-  Trust and operations page explaining Dan-Wash’s workflow, standards, and customer value.
+  Trust and operations page covering Dan-Wash standards, mission, vision, customer fit, and order quality.
 
 - `pricing.html`  
-  Pricing overview with featured plans, item rates, and recurring service notes.
+  Pricing page with plan cards, common item rates, monthly plan notes, and quote guidance.
 
 - `gallery.html`  
-  Image-driven page showing the brand presentation, workflow quality, and laundry finishing standards.
+  Image-led gallery page with larger photo cards showing laundry presentation, sorting, finishing, packaging, and dispatch.
 
 - `book-us.html`  
-  Booking page with contact details, pickup zones, booking form, and FAQ content.
+  Booking page with pickup request form, contact details, coverage areas, and FAQ cards.
 
-## Shared Assets
+## Design Direction
+
+- Clean laundry-service look with white surfaces, green accents, deep ink text, and warm gold calls to action
+- Page-specific layouts so each page feels distinct while sharing one brand system
+- Larger service and gallery imagery
+- 8px-style card radius, light borders, and restrained shadows
+- Icon-only light/dark theme toggle
+- Responsive layouts for desktop, tablet, and mobile
+
+## Shared Files
 
 - `style.css`  
-  Shared design system, typography, colors, layout, card styling, navbar styling, theme toggle styling, animation utilities, and responsive behavior.
+  Contains the design tokens, responsive layout rules, page-specific styling, cards, forms, navbar, gallery, pricing tables, theme toggle, and animation styles.
 
 - `script.js`  
-  Shared interaction logic including:
-  - theme persistence with `localStorage`
-  - scroll progress bar
-  - reveal-on-scroll effects
-  - navbar scroll behavior
-  - back-to-top button
-  - background motion
-  - booking form validation and success state
+  Handles theme persistence, active navigation state, scroll progress, reveal effects, navbar scroll behavior, back-to-top button, pickup date minimum, and booking form validation.
 
 ## Features
 
-- Multi-page business website structure
-- Responsive layout for desktop and mobile
-- Shared navigation across all pages
-- Navbar icons for quick visual scanning
-- Professional segmented light/dark theme toggle
-- Animated page entry, reveal, hover, and scroll effects
-- Abuja-focused service and coverage content
-- Booking form with frontend validation
-- Back-to-top button and scroll progress indicator
+- Static multi-page site
+- Shared responsive navigation
+- Light/dark theme with `localStorage` persistence
+- Icon-only theme toggle
+- Scroll progress indicator
+- Reveal-on-scroll animation
+- Back-to-top button
+- Booking form validation and success state
+- Abuja-focused service, pricing, coverage, and contact content
 
 ## Project Structure
 
@@ -87,28 +80,26 @@ Laundry Website/
 
 ## Getting Started
 
-This is a static website, so no build step is required.
+No build step is required.
 
-1. Clone or download the project.
-2. Open `index.html` in your browser.
+1. Open `index.html` in a browser.
+2. Navigate through the pages using the site navbar.
 
-For easier editing and preview during development, use a local live server extension in your editor.
+For a smoother editing workflow, use a local live server extension in your editor.
 
 ## External Dependencies
 
-The project loads the following from CDNs:
+The site loads these assets from CDNs:
 
 - [Bootstrap 5.3.3](https://getbootstrap.com/)
 - [Bootstrap Icons 1.11.3](https://icons.getbootstrap.com/)
-- Google Fonts (`Manrope` and `Inter`)
+- Google Fonts: `Inter` and `Manrope`
 
-If you need offline use, replace these CDN links with local asset copies.
+If offline support is needed, download these assets and update the HTML links to local files.
 
 ## Booking Form Behavior
 
-The booking form on `book-us.html` currently performs client-side validation only.
-
-It validates:
+The form on `book-us.html` validates user input in the browser. It checks:
 
 - full name
 - phone number
@@ -120,48 +111,38 @@ It validates:
 - pickup address
 - order notes
 
-It does **not** currently send data to a backend, database, email service, or WhatsApp automatically.
+The form does not currently submit to a backend, email service, database, or WhatsApp. It only shows a local success message after validation.
 
 ## Customization Notes
 
-You can adapt the site further by editing:
+Common updates can be made in:
 
-- business copy in the HTML pages
-- coverage areas and pickup windows
-- service descriptions and pricing
-- gallery images
-- social/contact links
-- theme tokens and animations in `style.css`
-- form behavior in `script.js`
+- HTML pages for copy, pricing, contact details, and coverage areas
+- `style.css` for brand colors, spacing, image sizing, page layouts, and theme styling
+- `script.js` for interactions and booking form behavior
 
 ## Deployment
 
-This project can be deployed on any static hosting platform, including:
+Because the site is static, it can be hosted on:
 
 - GitHub Pages
 - Netlify
 - Vercel
 - Firebase Hosting
-- standard shared hosting with HTML support
+- any shared hosting service that supports HTML, CSS, and JavaScript
 
 ## Suggested Next Improvements
 
-- Connect the booking form to a real backend or email workflow
-- Add real service photos and local Abuja business imagery
-- Add SEO/social metadata for all pages
-- Add a sitemap and favicon set
-- Add WhatsApp quick-book integration from the booking form
+- Connect the booking form to email, WhatsApp, or a backend
+- Replace stock gallery images with real Dan-Wash photos
+- Add favicon files and social preview metadata
+- Add sitemap and `robots.txt`
 - Add analytics or form conversion tracking
 
 ## Author
 
 Dan-Wash Laundry & Dry Cleaning
 
-- Phone: `08109368514`
-- Email: `jegbefumhendaniel@gmail.com`
-- WhatsApp: `+234 8109368514`
-- Location: `FCT - Abuja`
-
 ## License
 
-This project is available for personal or commercial customization. Add your preferred license if you want formal usage terms.
+Add a formal license if you want to define usage terms. Until then, treat this project as available for personal or commercial customization by the project owner.
